@@ -53,8 +53,8 @@ export const ResultsAndTestimonials = ({
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{result.name}</h3>
-                  <p className="text-muted-foreground italic">"{result.testimonial}"</p>
+                  <h3 className="text-xl font-bold mb-2 text-black">{result.name}</h3>
+                  <p className="text-black italic">"{result.testimonial}"</p>
                 </CardContent>
               </Card>
             ))}
@@ -74,9 +74,9 @@ export const ResultsAndTestimonials = ({
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="text-4xl">{testimonial.avatar}</div>
-                    <div className="font-semibold">{testimonial.name}</div>
+                    <div className="font-semibold text-black">{testimonial.name}</div>
                   </div>
-                  <p className="text-muted-foreground">"{testimonial.text}"</p>
+                  <p className="text-black">"{testimonial.text}"</p>
                   <div className="flex gap-1 mt-4">
                     {[...Array(5)].map((_, i) => (
                       <Icon key={i} name="Star" size={16} className="text-yellow-400 fill-yellow-400" />
