@@ -510,12 +510,32 @@ const Index = () => {
           <p className="text-xl mb-8 opacity-90">
             Получай ежедневную поддержку, делись своими результатами и вдохновляй других
           </p>
+          
+          <div className="mb-8 space-y-4">
+            <a 
+              href="tel:89276864455" 
+              className="flex items-center justify-center gap-3 text-2xl font-semibold hover:opacity-80 transition-opacity"
+            >
+              <Icon name="Phone" size={28} />
+              <span>8-927-686-44-55</span>
+            </a>
+            <a 
+              href="https://vk.link/yuliya_pp" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 text-xl hover:opacity-80 transition-opacity"
+            >
+              <Icon name="Link" size={24} />
+              <span>vk.link/yuliya_pp</span>
+            </a>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
               variant="secondary" 
               className="text-lg px-8 py-6"
-              onClick={() => window.open('https://vk.com/yuliya_pp?from=groups', '_blank')}
+              onClick={() => window.open('https://vk.link/yuliya_pp', '_blank')}
             >
               <Icon name="MessageCircle" className="mr-2" />
               Связаться ВКонтакте
