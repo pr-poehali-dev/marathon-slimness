@@ -5,32 +5,25 @@ import Icon from '@/components/ui/icon';
 export const CertificatesSection = () => {
   const certificates = [
     {
-      icon: 'Award',
-      title: 'Сертифицированный нутрициолог',
-      organization: 'Международная академия здоровья',
+      image: 'https://cdn.poehali.dev/files/900617c3-f39b-4919-96be-cd51ac0d2072.jpg',
+      title: 'Диплом о профессиональной переподготовке',
+      organization: 'Диетолог-консультант',
       year: '2021',
-      description: 'Специализация: правильное питание и диетология'
+      description: 'Квалификация по программе профессиональной переподготовки'
     },
     {
-      icon: 'GraduationCap',
-      title: 'Диплом фитнес-тренера',
-      organization: 'Высшая школа спорта',
-      year: '2019',
-      description: 'Квалификация: персональный тренер категории А'
+      image: 'https://cdn.poehali.dev/files/5b7559ce-e2e0-4b82-bf4d-089964d8e112.jpg',
+      title: 'Сертификат НИПО',
+      organization: 'Национальный институт профессионального образования',
+      year: '2021',
+      description: 'Диетолог-консультант, 520 часов обучения'
     },
     {
-      icon: 'Heart',
-      title: 'Психология снижения веса',
-      organization: 'Институт психологии здоровья',
+      image: 'https://cdn.poehali.dev/files/35f4770d-5fef-47d7-bc15-2a8b3068c7e7.jpg',
+      title: 'Сертификат Puzzle Brain',
+      organization: 'РПП: расстройства пищевого поведения',
       year: '2022',
-      description: 'Работа с пищевым поведением и мотивацией'
-    },
-    {
-      icon: 'FileCheck',
-      title: 'Спортивная медицина',
-      organization: 'Медицинский университет',
-      year: '2020',
-      description: 'Безопасность тренировок и профилактика травм'
+      description: 'Курс по работе с пищевым поведением'
     }
   ];
 
@@ -48,27 +41,30 @@ export const CertificatesSection = () => {
             Программа разработана сертифицированными специалистами с многолетним опытом
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {certificates.map((cert, idx) => (
             <Card 
               key={idx} 
-              className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary"
+              className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
             >
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/10">
+                <img 
+                  src={cert.image}
+                  alt={cert.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Icon name={cert.icon as any} size={28} className="text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-1">{cert.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {cert.organization} • {cert.year}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {cert.description}
-                    </p>
-                  </div>
-                </div>
+                <h3 className="text-lg font-bold mb-2">{cert.title}</h3>
+                <p className="text-sm text-muted-foreground mb-1 font-medium">
+                  {cert.organization}
+                </p>
+                <p className="text-xs text-muted-foreground mb-2">
+                  {cert.year}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {cert.description}
+                </p>
               </CardContent>
             </Card>
           ))}
