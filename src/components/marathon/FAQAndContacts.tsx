@@ -59,12 +59,12 @@ export const FAQAndContacts = ({
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-4 bg-gradient-to-br from-primary via-secondary to-accent text-white">
+      <section id="contacts" className="py-20 px-4 bg-primary text-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <Icon name="Users" size={64} className="mx-auto mb-6 opacity-90" />
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Присоединяйся к сообществу!</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Получай ежедневную поддержку, делись своими результатами и вдохновляй других
+          <Icon name="Phone" size={64} className="mx-auto mb-6" />
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Свяжитесь с нами</h2>
+          <p className="text-xl mb-8">
+            Ответим на все вопросы и поможем начать ваш путь к результату
           </p>
           
           <div className="mb-8 space-y-4">

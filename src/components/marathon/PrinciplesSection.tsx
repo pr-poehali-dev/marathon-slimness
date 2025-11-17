@@ -38,10 +38,10 @@ const principles: Principle[] = [
 
 export const PrinciplesSection = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white to-muted/30">
+    <section className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-gradient-to-r from-primary to-secondary text-white border-0">
+          <Badge className="mb-4 bg-primary text-white border-0">
             Наш подход
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Основные принципы</h2>
@@ -53,11 +53,11 @@ export const PrinciplesSection = () => {
           {principles.map((principle, idx) => (
             <Card 
               key={idx}
-              className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary"
             >
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name={principle.icon as any} size={32} className="text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{principle.title}</h3>

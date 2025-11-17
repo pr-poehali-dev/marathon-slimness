@@ -158,12 +158,12 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-muted/30">
-      <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
+    <div className="min-h-screen bg-white">
+      <header className="fixed top-0 left-0 right-0 bg-white z-50 border-b shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Icon name="Flame" className="text-primary" size={32} />
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            <Icon name="Award" className="text-primary" size={32} />
+            <span className="text-2xl font-bold text-primary">
               Марафон Стройности
             </span>
           </div>
@@ -176,7 +176,7 @@ const Index = () => {
           </nav>
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
             <DialogTrigger asChild>
-              <Button className="animate-pulse-scale">Присоединиться</Button>
+              <Button>Записаться</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
               <DialogHeader>

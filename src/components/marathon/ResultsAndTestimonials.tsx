@@ -29,22 +29,22 @@ export const ResultsAndTestimonials = ({
       <section id="results" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-gradient-to-r from-secondary to-accent text-white border-0">
+            <Badge className="mb-4 bg-primary text-white border-0">
               Результаты участников
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Они смогли. И ты сможешь!</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Доказанные результаты</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Реальные истории реальных людей, которые изменили свою жизнь
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {results.map((result, idx) => (
-              <Card key={idx} className="overflow-hidden group hover:shadow-2xl transition-all duration-300">
+              <Card key={idx} className="overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
                   <img 
                     src={result.image}
                     alt={result.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 right-4">
                     <Badge className="bg-white text-primary font-bold text-lg px-4 py-2">
