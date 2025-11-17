@@ -9,6 +9,7 @@ import Icon from '@/components/ui/icon';
 import { HeroSection } from '@/components/marathon/HeroSection';
 import { PrinciplesSection } from '@/components/marathon/PrinciplesSection';
 import { FormatSection } from '@/components/marathon/FormatSection';
+import { CertificatesSection } from '@/components/marathon/CertificatesSection';
 import { ProgramSection } from '@/components/marathon/ProgramSection';
 import { ResultsAndTestimonials } from '@/components/marathon/ResultsAndTestimonials';
 import { FAQAndContacts } from '@/components/marathon/FAQAndContacts';
@@ -260,6 +261,8 @@ const Index = () => {
       <PrinciplesSection />
 
       <FormatSection />
+
+      <CertificatesSection />
 
       <ProgramSection
         challenges={challenges}
