@@ -37,13 +37,13 @@ export const HeroSection = ({
               🎄 Новогоднее преображение
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Встречай Новый Год{' '}
+              Встречай Новый Год с{' '}
               <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                новой собой
+                новой фигурой!
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Успей преобразиться к праздникам! 4 недели интенсивной работы над собой, чтобы встретить Новый Год в лучшей форме
+              Старт твоего преображения прямо сейчас! Успей измениться к празднику
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
