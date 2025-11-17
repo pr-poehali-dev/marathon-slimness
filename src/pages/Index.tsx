@@ -511,14 +511,89 @@ const Index = () => {
             Получай ежедневную поддержку, делись своими результатами и вдохновляй других
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="text-lg px-8 py-6"
+              onClick={() => window.open('https://vk.com/yuliya_pp?from=groups', '_blank')}
+            >
               <Icon name="MessageCircle" className="mr-2" />
-              Группа ВКонтакте
+              Связаться ВКонтакте
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 text-white border-white/30 hover:bg-white/20">
-              <Icon name="Mail" className="mr-2" />
-              Написать нам
-            </Button>
+            <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+              <DialogTrigger asChild>
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 text-white border-white/30 hover:bg-white/20">
+                  <Icon name="Zap" className="mr-2" />
+                  Записаться на марафон
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Регистрация на марафон</DialogTitle>
+                  <DialogDescription>
+                    Заполните форму, и мы свяжемся с вами в ближайшее время
+                  </DialogDescription>
+                </DialogHeader>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <Label htmlFor="name-footer">Имя *</Label>
+                    <Input
+                      id="name-footer"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Ваше имя"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email-footer">Email *</Label>
+                    <Input
+                      id="email-footer"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="your@email.com"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone-footer">Телефон *</Label>
+                    <Input
+                      id="phone-footer"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="+7 999 123-45-67"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="goal-footer">Ваша цель</Label>
+                    <Textarea
+                      id="goal-footer"
+                      name="goal"
+                      value={formData.goal}
+                      onChange={handleInputChange}
+                      placeholder="Например: Похудеть на 10 кг, улучшить форму..."
+                      rows={3}
+                    />
+                  </div>
+                  <Button type="submit" className="w-full" disabled={isRegistering}>
+                    {isRegistering ? (
+                      <>
+                        <Icon name="Loader2" className="mr-2 animate-spin" />
+                        Отправка...
+                      </>
+                    ) : (
+                      'Зарегистрироваться'
+                    )}
+                  </Button>
+                </form>
+              </DialogContent>
+            </Dialog>
           </div>
           <div className="mt-12 pt-8 border-t border-white/20">
             <p className="opacity-75">© 2025 Марафон Стройности. Все права защищены.</p>
