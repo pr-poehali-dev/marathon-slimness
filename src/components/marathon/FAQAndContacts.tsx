@@ -91,9 +91,18 @@ export const FAQAndContacts = ({
               size="lg" 
               variant="secondary" 
               className="text-lg px-8 py-6"
-              onClick={() => window.open('https://vk.link/yuliya_pp', '_blank')}
+              onClick={() => window.open('https://wa.me/79276864455', '_blank')}
             >
               <Icon name="MessageCircle" className="mr-2" />
+              Присоединиться к WhatsApp
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="text-lg px-8 py-6 bg-white/10 text-white border-white/30 hover:bg-white/20"
+              onClick={() => window.open('https://vk.link/yuliya_pp', '_blank')}
+            >
+              <Icon name="Link" className="mr-2" />
               Связаться ВКонтакте
             </Button>
             <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
