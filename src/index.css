@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Rubik:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Cormorant:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,14 +6,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 35%;
-    --foreground: 0 0% 95%;
+    --background: 40 35% 94%;
+    --foreground: 30 15% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 280 20% 25%;
+    --card: 40 40% 98%;
+    --card-foreground: 30 15% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 280 20% 25%;
+    --popover: 40 40% 98%;
+    --popover-foreground: 30 15% 20%;
 
     --primary: 290 60% 55%;
     --primary-foreground: 0 0% 100%;
@@ -21,8 +21,8 @@
     --secondary: 280 45% 65%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 40%;
-    --muted-foreground: 0 0% 85%;
+    --muted: 40 25% 88%;
+    --muted-foreground: 30 15% 40%;
 
     --accent: 320 70% 60%;
     --accent-foreground: 0 0% 100%;
@@ -54,7 +54,7 @@
   }
 
   body {
-    font-family: "Rubik", sans-serif;
+    font-family: "Cormorant", serif;
   }
 
   h1,
@@ -63,7 +63,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Playfair Display", serif;
   }
 
   .dark {
