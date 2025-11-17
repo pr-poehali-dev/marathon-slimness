@@ -59,18 +59,18 @@ export const FAQAndContacts = ({
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-4 bg-primary text-white">
+      <section id="contacts" className="py-20 px-4 bg-primary text-black">
         <div className="container mx-auto max-w-4xl text-center">
-          <Icon name="Phone" size={64} className="mx-auto mb-6" />
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Свяжитесь с нами</h2>
-          <p className="text-xl mb-8">
+          <Icon name="Phone" size={64} className="mx-auto mb-6 text-black" />
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">Свяжитесь с нами</h2>
+          <p className="text-xl mb-8 text-black">
             Ответим на все вопросы и поможем начать ваш путь к результату
           </p>
           
           <div className="mb-8 space-y-4">
             <a 
               href="tel:89276864455" 
-              className="flex items-center justify-center gap-3 text-2xl font-semibold hover:opacity-80 transition-opacity"
+              className="flex items-center justify-center gap-3 text-2xl font-semibold hover:opacity-80 transition-opacity text-black"
             >
               <Icon name="Phone" size={28} />
               <span>8-927-686-44-55</span>
@@ -79,7 +79,7 @@ export const FAQAndContacts = ({
               href="https://vk.link/yuliya_pp" 
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 text-xl hover:opacity-80 transition-opacity"
+              className="flex items-center justify-center gap-3 text-xl hover:opacity-80 transition-opacity text-black"
             >
               <Icon name="Link" size={24} />
               <span>vk.link/yuliya_pp</span>
@@ -99,7 +99,7 @@ export const FAQAndContacts = ({
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg px-8 py-6 bg-white/10 text-white border-white/30 hover:bg-white/20"
+              className="text-lg px-8 py-6 bg-black/10 text-black border-black/30 hover:bg-black/20"
               onClick={() => window.open('https://vk.link/yuliya_pp', '_blank')}
             >
               <Icon name="Link" className="mr-2" />
@@ -107,7 +107,7 @@ export const FAQAndContacts = ({
             </Button>
             <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
               <DialogTrigger asChild>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 text-white border-white/30 hover:bg-white/20">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-black/10 text-black border-black/30 hover:bg-black/20">
                   <Icon name="Zap" className="mr-2" />
                   Записаться на марафон
                 </Button>
@@ -180,8 +180,8 @@ export const FAQAndContacts = ({
               </DialogContent>
             </Dialog>
           </div>
-          <div className="mt-12 pt-8 border-t border-white/20">
-            <p className="opacity-75">© 2025 Марафон Стройности. Все права защищены.</p>
+          <div className="mt-12 pt-8 border-t border-black/20">
+            <p className="opacity-75 text-black">© 2025 Марафон Стройности. Все права защищены.</p>
           </div>
         </div>
       </section>
