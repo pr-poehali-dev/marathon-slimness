@@ -7,6 +7,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
 import { HeroSection } from '@/components/marathon/HeroSection';
+import { PrinciplesSection } from '@/components/marathon/PrinciplesSection';
+import { FormatSection } from '@/components/marathon/FormatSection';
 import { ProgramSection } from '@/components/marathon/ProgramSection';
 import { ResultsAndTestimonials } from '@/components/marathon/ResultsAndTestimonials';
 import { FAQAndContacts } from '@/components/marathon/FAQAndContacts';
@@ -254,6 +256,10 @@ const Index = () => {
         handleSubmit={handleSubmit}
         isRegistering={isRegistering}
       />
+
+      <PrinciplesSection />
+
+      <FormatSection />
 
       <ProgramSection
         challenges={challenges}
