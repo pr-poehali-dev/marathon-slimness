@@ -47,10 +47,10 @@ export const FAQAndContacts = ({
           <Accordion type="single" collapsible className="space-y-4">
             {faqItems.map((item, idx) => (
               <AccordionItem key={idx} value={`item-${idx}`} className="border rounded-lg px-6 bg-white">
-                <AccordionTrigger className="text-left font-semibold hover:text-primary">
+                <AccordionTrigger className="text-left font-semibold hover:text-primary text-black">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-black">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
