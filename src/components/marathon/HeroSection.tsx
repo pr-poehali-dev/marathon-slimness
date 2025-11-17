@@ -143,7 +143,7 @@ export const HeroSection = ({
           <div className="relative animate-slide-in-right -mt-8 md:-mt-16 md:ml-8">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-3xl"></div>
             <img 
-              src="https://cdn.poehali.dev/projects/4992dd00-930e-4f8b-b47e-f0d618949f45/files/d8ee3888-f436-4db8-822b-aed3b544d8c0.jpg"
+              src="https://cdn.poehali.dev/files/0d22814d-a908-4674-aeb4-825ce83cd66d.jpg"
               alt="Минус 32 кг - реальный результат"
               className="relative rounded-3xl shadow-2xl w-full object-cover"
             />
