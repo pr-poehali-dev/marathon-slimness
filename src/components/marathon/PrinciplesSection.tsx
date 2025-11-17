@@ -45,7 +45,7 @@ export const PrinciplesSection = () => {
             Наш подход
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Основные принципы</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-black max-w-2xl mx-auto">
             Мы верим в здоровое и комфортное преображение без стресса и жертв
           </p>
         </div>
@@ -60,8 +60,8 @@ export const PrinciplesSection = () => {
                   <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name={principle.icon as any} size={32} className="text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{principle.title}</h3>
-                  <p className="text-muted-foreground">{principle.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-black">{principle.title}</h3>
+                  <p className="text-black">{principle.description}</p>
                 </div>
               </CardContent>
             </Card>
