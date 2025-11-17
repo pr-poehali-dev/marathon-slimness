@@ -357,7 +357,7 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="relative animate-slide-in-right">
+            <div className="relative animate-slide-in-right -mt-8 md:-mt-16 md:ml-8">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-3xl"></div>
               <img 
                 src="https://cdn.poehali.dev/projects/4992dd00-930e-4f8b-b47e-f0d618949f45/files/5b02eeeb-646b-47a4-a75f-3d9c48552f12.jpg"
