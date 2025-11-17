@@ -3,10 +3,67 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeChallenge, setActiveChallenge] = useState<number | null>(null);
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    goal: ''
+  });
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsRegistering(true);
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/12613b67-d48e-401e-9684-944b691f0248', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: '🎉 Поздравляем!',
+          description: 'Вы успешно зарегистрированы на марафон. Скоро с вами свяжутся!',
+        });
+        setFormData({ name: '', email: '', phone: '', goal: '' });
+        setDialogOpen(false);
+      } else {
+        throw new Error(data.error || 'Registration failed');
+      }
+    } catch (error) {
+      toast({
+        title: 'Ошибка',
+        description: 'Не удалось зарегистрироваться. Попробуйте еще раз.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsRegistering(false);
+    }
+  };
 
   const challenges = [
     {
@@ -114,7 +171,77 @@ const Index = () => {
             <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
             <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
           </nav>
-          <Button className="animate-pulse-scale">Присоединиться</Button>
+          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+            <DialogTrigger asChild>
+              <Button className="animate-pulse-scale">Присоединиться</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>Регистрация на марафон</DialogTitle>
+                <DialogDescription>
+                  Заполните форму, и мы свяжемся с вами в ближайшее время
+                </DialogDescription>
+              </DialogHeader>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <Label htmlFor="name">Имя *</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Ваше имя"
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="email">Email *</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="phone">Телефон *</Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="+7 999 123-45-67"
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="goal">Ваша цель</Label>
+                  <Textarea
+                    id="goal"
+                    name="goal"
+                    value={formData.goal}
+                    onChange={handleInputChange}
+                    placeholder="Например: Похудеть на 10 кг, улучшить форму..."
+                    rows={3}
+                  />
+                </div>
+                <Button type="submit" className="w-full" disabled={isRegistering}>
+                  {isRegistering ? (
+                    <>
+                      <Icon name="Loader2" className="mr-2 animate-spin" />
+                      Отправка...
+                    </>
+                  ) : (
+                    'Зарегистрироваться'
+                  )}
+                </Button>
+              </form>
+            </DialogContent>
+          </Dialog>
         </div>
       </header>
 
@@ -136,10 +263,80 @@ const Index = () => {
                 Присоединяйся к марафону стройности! Получай ежедневные челленджи, мотивационные материалы и поддержку сообщества
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
-                  <Icon name="Zap" className="mr-2" />
-                  Начать прямо сейчас
-                </Button>
+                <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                  <DialogTrigger asChild>
+                    <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
+                      <Icon name="Zap" className="mr-2" />
+                      Начать прямо сейчас
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                      <DialogTitle>Регистрация на марафон</DialogTitle>
+                      <DialogDescription>
+                        Заполните форму, и мы свяжемся с вами в ближайшее время
+                      </DialogDescription>
+                    </DialogHeader>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div>
+                        <Label htmlFor="name-hero">Имя *</Label>
+                        <Input
+                          id="name-hero"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          placeholder="Ваше имя"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="email-hero">Email *</Label>
+                        <Input
+                          id="email-hero"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          placeholder="your@email.com"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="phone-hero">Телефон *</Label>
+                        <Input
+                          id="phone-hero"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="+7 999 123-45-67"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="goal-hero">Ваша цель</Label>
+                        <Textarea
+                          id="goal-hero"
+                          name="goal"
+                          value={formData.goal}
+                          onChange={handleInputChange}
+                          placeholder="Например: Похудеть на 10 кг, улучшить форму..."
+                          rows={3}
+                        />
+                      </div>
+                      <Button type="submit" className="w-full" disabled={isRegistering}>
+                        {isRegistering ? (
+                          <>
+                            <Icon name="Loader2" className="mr-2 animate-spin" />
+                            Отправка...
+                          </>
+                        ) : (
+                          'Зарегистрироваться'
+                        )}
+                      </Button>
+                    </form>
+                  </DialogContent>
+                </Dialog>
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6">
                   <Icon name="PlayCircle" className="mr-2" />
                   Как это работает
