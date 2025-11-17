@@ -34,17 +34,16 @@ export const HeroSection = ({
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <Badge className="mb-4 bg-gradient-to-r from-primary to-secondary text-white border-0">
-              Старт через 3 дня!
+              🎄 Новогоднее преображение
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Преврати свою{' '}
+              Встречай Новый Год{' '}
               <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                мечту
+                новой собой
               </span>
-              {' '}в реальность
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Присоединяйся к марафону стройности! Получай ежедневные челленджи, мотивационные материалы и поддержку сообщества
+              Успей преобразиться к праздникам! 4 недели интенсивной работы над собой, чтобы встретить Новый Год в лучшей форме
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
